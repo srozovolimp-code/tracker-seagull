@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { applyCalendarPatch } from "./calendar-patch.mjs";
 
 async function assemble(parts, output) {
   const encoded = (await Promise.all(parts.map((part) => readFile(part, "utf8")))).join("");
@@ -26,3 +27,5 @@ await assemble(
   ],
   "src/app/globals.css",
 );
+
+await applyCalendarPatch();
