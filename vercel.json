@@ -1,0 +1,3 @@
+{
+  "buildCommand": "node scripts/assemble.mjs && next build"
+}
