@@ -7,8 +7,6 @@ import { applyContactTagsPatch } from "./contact-tags-patch.mjs";
 import { applyTaskAssigneesPatch } from "./task-assignees-patch.mjs";
 import { applyTeamMembersPatch } from "./team-members-patch.mjs";
 import { applyBrandPatch } from "./brand-patch.mjs";
-import { applyProjectCabinetPatch } from "./project-cabinet-patch.mjs";
-import { applyProjectCabinetRuntimeFix } from "./project-cabinet-runtime-fix.mjs";
 
 async function assemble(parts, output) {
   const encoded = (await Promise.all(parts.map((part) => readFile(part, "utf8")))).join("");
@@ -43,5 +41,3 @@ await applyContactTagsPatch();
 await applyTaskAssigneesPatch();
 await applyTeamMembersPatch();
 await applyBrandPatch();
-await applyProjectCabinetPatch();
-await applyProjectCabinetRuntimeFix();
