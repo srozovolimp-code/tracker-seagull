@@ -1,6 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const TEAM_TABLE = String.raw`
+const COLLAPSED_BRANCHES_KEY="tracker-seagull-collapsed-branches-v1";
+function readCollapsedBranches(){try{const parsed=JSON.parse(window.localStorage.getItem(COLLAPSED_BRANCHES_KEY)||"[]");return Array.isArray(parsed)?parsed.filter(value=>typeof value==="string"):[]}catch{return[]}}
 function teamMembersDialog({team,onClose}){
   const[contacts]=useContactsDirectory();
   const members=contacts.filter(contact=>contact.tags.includes(team)).sort((left,right)=>left.name.localeCompare(right.name,"ru"));
@@ -15,16 +17,19 @@ function teamMembersDialog({team,onClose}){
     e("footer",{className:"team-members-footer",children:e("button",{type:"button",onClick:onClose,children:"Закрыть"})})
   ]})})
 }
-function ie({tasks:n,collapsedTeams:t,onToggleTeam:l,onEdit:s,onUpdate:c,onCreate:d}){
+function ie({tasks:n,onEdit:s,onUpdate:c,onCreate:d}){
   const[selectedTeam,setSelectedTeam]=q(null);
+  const[collapsedTeams,setCollapsedTeams]=q([]);
+  F(()=>{setCollapsedTeams(readCollapsedBranches())},[]);
   const groups=A(()=>Array.from(new Set(n.map(task=>task.team))).map(team=>({team,tasks:n.filter(task=>task.team===team)})),[n]);
   const tones=["pink","amber","violet","cyan"];
+  function toggleTeam(team){setCollapsedTeams(current=>{const next=current.includes(team)?current.filter(item=>item!==team):[...current,team];window.localStorage.setItem(COLLAPSED_BRANCHES_KEY,JSON.stringify(next));return next})}
   return a("div",{className:"team-table-root",children:[
     n.length?a("div",{className:"table-wrap",children:[
       a("div",{className:"task-table task-table-head",children:[e("div",{className:"task-col",children:"Задачи"}),e("div",{children:"Статус"}),e("div",{children:"Приоритет"}),e("div",{children:"Спринт"}),e("div",{children:"Ответственные"}),e("div",{children:"Срок"})]}),
-      groups.map((group,index)=>{const collapsed=t.includes(group.team);return a("section",{className:_("task-group",collapsed&&"collapsed"),children:[
+      groups.map((group,index)=>{const collapsed=collapsedTeams.includes(group.team);return a("section",{className:_("task-group",collapsed&&"collapsed"),children:[
         a("div",{className:"group-header team-group-header",children:[
-          e("button",{type:"button",className:_("team-collapse-button",collapsed&&"collapsed"),onClick:()=>l(group.team),"aria-expanded":!collapsed,"aria-label":collapsed?"Развернуть ветку команды":"Свернуть ветку команды",title:collapsed?"Развернуть ветку":"Свернуть ветку",children:e("span",{children:"⌄"})}),
+          e("button",{type:"button",className:_("team-collapse-button",collapsed&&"collapsed"),onClick:event=>{event.preventDefault();event.stopPropagation();toggleTeam(group.team)},"aria-expanded":!collapsed,"aria-label":collapsed?"Развернуть ветку команды":"Свернуть ветку команды",title:collapsed?"Развернуть ветку":"Свернуть ветку",children:e("span",{children:"⌄"})}),
           e("button",{type:"button",className:"team-chip "+tones[index%tones.length]+" team-members-trigger",onClick:()=>setSelectedTeam(group.team),title:"Показать участников команды",children:group.team}),
           e("b",{children:group.tasks.length})
         ]}),
