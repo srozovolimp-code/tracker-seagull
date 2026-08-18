@@ -1,139 +1,163 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Актуальные акции конкурентов — 11.08.2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мониторинг акций конкурентов</title>
 <style>
-:root{
-  --bg:#f5f3ef;--surface:#fff;--surface2:#ece8e0;--ink:#181817;--muted:#716d66;
-  --line:#ded9d0;--accent:#202d2a;--accent2:#bb6c45;--good:#2f6c50;--warn:#8a6531;
-  --shadow:0 10px 34px rgba(25,24,21,.07);--r:20px;
+:root {
+  --bg:#f5f4f1; --panel:#ffffff; --text:#202225; --muted:#6d7075; --border:#dedbd4;
+  --accent:#762f42; --accent-soft:#f2e8eb; --chip:#f0efec; --shadow:0 8px 26px rgba(32,34,37,.06);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-.wrap{max-width:1320px;margin:auto;padding:32px 28px 72px}
-.hero{background:var(--accent);color:#f9f7f2;border-radius:28px;padding:34px 38px 36px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:-90px;top:-150px;background:rgba(255,255,255,.06)}
-.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.72;font-weight:700}
-h1{font-size:clamp(32px,4.1vw,62px);line-height:.96;margin:14px 0 16px;max-width:850px;letter-spacing:-.045em}
-.hero p{font-size:16px;line-height:1.55;margin:0;max-width:760px;color:#d8ddd9}
-.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 12px;font-size:13px;color:#e8ece9;background:rgba(255,255,255,.06)}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0 28px}
-.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
-.kpi .v{font-size:34px;font-weight:760;letter-spacing:-.04em}.kpi .l{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.35}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-bottom:28px}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;box-shadow:var(--shadow)}
-.panel h2,.section-head h2{font-size:21px;margin:0 0 4px;letter-spacing:-.02em}.panel .sub,.section-head p{color:var(--muted);font-size:13px;margin:0 0 18px}
-.bar-row{display:grid;grid-template-columns:125px 1fr 28px;align-items:center;gap:12px;margin:12px 0}.bar-name{font-size:13px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar-track{height:10px;border-radius:999px;background:var(--surface2);overflow:hidden}.bar-fill{height:100%;background:var(--accent);border-radius:999px}.bar-num{font-size:12px;color:var(--muted);text-align:right}
-.insights{display:grid;gap:10px}.insight{background:#f8f6f2;border:1px solid var(--line);border-radius:14px;padding:14px 15px}.insight b{display:block;font-size:14px;margin-bottom:5px}.insight span{font-size:13px;line-height:1.45;color:var(--muted)}
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:34px 0 12px}.section-head p{margin:0}
-.controls{position:sticky;top:0;z-index:10;background:rgba(245,243,239,.92);backdrop-filter:blur(14px);padding:12px 0;border-bottom:1px solid rgba(222,217,208,.6);margin-bottom:16px}
-.filter-row{display:flex;gap:8px;flex-wrap:wrap}.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:650;cursor:pointer;transition:.15s}.chip:hover{transform:translateY(-1px)}.chip.active{background:var(--accent);color:white;border-color:var(--accent)}
-.search{margin-left:auto;min-width:240px;flex:1;max-width:330px;border:1px solid var(--line);background:white;border-radius:999px;padding:9px 13px;font-size:13px;outline:none}.search:focus{border-color:#a39b90;box-shadow:0 0 0 3px rgba(32,45,42,.08)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;min-height:225px;box-shadow:0 5px 24px rgba(25,24,21,.045)}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.store{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em}.brand{font-size:20px;font-weight:760;letter-spacing:-.025em;margin:7px 0 0}.tag{font-size:11px;border-radius:999px;padding:6px 8px;white-space:nowrap;background:#edf3ef;color:var(--good);font-weight:700}.tag.ongoing{background:#f2ece3;color:var(--warn)}
-.offer{font-size:15px;line-height:1.47;margin:17px 0 16px}.discount{font-size:28px;line-height:1;font-weight:800;letter-spacing:-.04em;color:var(--accent2);margin:12px 0 0}.meta{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted);font-size:12px}.type{font-weight:650;color:#57524b}
-.matrix{overflow:auto;border:1px solid var(--line);border-radius:16px;background:white}table{width:100%;border-collapse:collapse;min-width:920px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:12px;vertical-align:top}th{position:sticky;top:0;background:#f8f6f2;color:#68635c;font-weight:750}td:first-child{font-weight:750;font-size:13px}.dot{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:25px;border-radius:999px;padding:0 8px;background:#e9efeb;color:var(--good);font-weight:800}.zero{color:#aaa49a}
-.empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:18px;padding:34px;text-align:center;color:var(--muted);display:none}
-.note{margin-top:22px;font-size:12px;color:var(--muted);line-height:1.5}.note strong{color:#57524b}
-footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:650px){.wrap{padding:16px 14px 48px}.hero{padding:28px 22px}.kpis{grid-template-columns:1fr 1fr}.kpi{padding:16px}.kpi .v{font-size:28px}.cards{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.search{margin-left:0;max-width:none;width:100%}.bar-row{grid-template-columns:104px 1fr 24px}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:30px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+h1{font-size:28px;line-height:1.15;margin:0 0 7px;font-weight:650;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0}
+.snapshot{display:flex;gap:8px}
+.btn,.site-btn{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:12px;padding:9px 12px}
+.btn.active,.site-btn.active{background:var(--accent);border-color:var(--accent);color:white}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}
+.metric{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:15px 16px;box-shadow:var(--shadow)}
+.metric .label{color:var(--muted);font-size:13px}
+.metric .value{font-size:27px;font-weight:650;margin-top:3px}
+.controls{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.controls-title{font-size:13px;color:var(--muted);margin-bottom:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.filters{display:grid;grid-template-columns:1fr 240px;gap:12px;margin-top:14px}
+label span{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+input,select{width:100%;border:1px solid var(--border);border-radius:12px;background:white;color:var(--text);padding:10px 12px;outline:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 14px;color:var(--muted);font-size:13px}
+.group{margin:0 0 24px}
+.group-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.group h2{font-size:18px;margin:0;font-weight:650}
+.count{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.brand{font-weight:650}
+.status{display:inline-flex;align-items:center;border:1px solid var(--border);background:var(--chip);border-radius:999px;padding:4px 8px;font-size:12px;white-space:nowrap}
+.status[data-status="Действует"]{background:var(--accent-soft);border-color:#c9a7b1;color:#5d2434}
+.status[data-status="Завершена"]{opacity:.65}
+.condition{margin:10px 0 0}
+.empty{border:1px dashed var(--border);border-radius:16px;padding:30px;text-align:center;color:var(--muted);background:rgba(255,255,255,.45)}
+.note{margin-top:30px;color:var(--muted);font-size:12px}
+@media(max-width:760px){
+  .wrap{padding:20px 12px 40px}
+  h1{font-size:24px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .filters{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <section class="hero">
-    <div class="eyebrow">Конкурентный мониторинг · напольные покрытия</div>
-    <h1>Актуальные акции конкурентов</h1>
-    <p>Срез на 11 августа 2026 года. Истекшие июльские предложения и позиции с неподтвержденной актуальностью исключены из визуализации.</p>
-    <div class="hero-meta"><span class="pill">Только действующие предложения</span><span class="pill">8 сайтов в мониторинге</span><span class="pill">Без архива</span></div>
-  </section>
-
-  <section class="kpis">
-    <div class="kpi"><div class="v" id="totalKpi">25</div><div class="l">актуальных предложений в срезе</div></div>
-    <div class="kpi"><div class="v">7 / 8</div><div class="l">сайтов с активными акциями</div></div>
-    <div class="kpi"><div class="v">−25%</div><div class="l">максимальная скидка на товар</div></div>
-    <div class="kpi"><div class="v">7</div><div class="l">предложений у самого активного сайта</div></div>
-  </section>
-
-  <section class="grid2">
-    <div class="panel">
-      <h2>Активность по сайтам</h2><p class="sub">Количество актуальных предложений в текущем срезе</p>
-      <div id="bars"></div>
+<main class="wrap">
+  <div class="top">
+    <div>
+      <h1>Мониторинг акций конкурентов</h1>
+      <p class="sub">Данные из файла «Конкурентный анализ (1).xlsx». Основной срез — 17.08.2026.</p>
     </div>
-    <div class="panel">
-      <h2>Что видно сразу</h2><p class="sub">Короткая управленческая выжимка</p>
-      <div class="insights">
-        <div class="insight"><b>ГлавПаркет — самый активный</b><span>7 механик одновременно: скидки, доставка, подарок, укладка, кэшбек и гарантия цены.</span></div>
-        <div class="insight"><b>Quick-Step — самая плотная промо-поддержка</b><span>На polstrany одновременно работают скидка до 25%, подарок 9+1, скидка новоселам и пакетные предложения.</span></div>
-        <div class="insight"><b>FINEX держит понятную ценовую механику</b><span>Две акции по −25% с четким окончанием 31 августа — на инженерную доску и елку.</span></div>
-        <div class="insight"><b>Coswick — без активной акции в файле</b><span>Сайт оставлен в сравнении с нулем, чтобы отсутствие промо не терялось из поля зрения.</span></div>
-      </div>
+    <div class="snapshot" aria-label="Выбор среза">
+      <button class="btn active" data-snapshot="17.08">17.08</button>
+      <button class="btn" data-snapshot="11.08">11.08</button>
     </div>
-  </section>
-
-  <div class="section-head"><div><h2>Карта брендов по площадкам</h2><p>Количество актуальных механик для каждого бренда на каждом сайте</p></div></div>
-  <div class="matrix"><table id="matrix"></table></div>
-
-  <div class="section-head"><div><h2>Все актуальные предложения</h2><p id="resultCount">25 предложений</p></div></div>
-  <div class="controls">
-    <div class="filter-row" id="filters"><button class="chip active" data-store="all">Все</button></div>
-    <div class="filter-row" style="margin-top:8px"><input class="search" id="search" placeholder="Поиск по бренду или условию…" /></div>
   </div>
-  <section class="cards" id="cards"><div class="empty" id="empty">По этому фильтру ничего не найдено.</div></section>
 
-  <p class="note"><strong>Правило отбора:</strong> исключены предложения, срок которых закончился до 11.08.2026, а также карточка Greenline EXTRA с прямой пометкой «требует проверки актуальности». Если срок в исходном срезе не указан, предложение показывается как «без срока» — оно присутствовало в мониторинге на дату среза.</p>
-  <footer><span>Источник: «Конкурентный анализ.xlsx», лист 11.08</span><span>Дата среза: 11.08.2026</span></footer>
-</div>
+  <section id="metrics" class="metrics"></section>
+
+  <section class="controls">
+    <div class="controls-title">Площадка</div>
+    <div id="tabs" class="tabs"></div>
+    <div class="filters">
+      <label><span>Поиск по бренду и условию</span><input id="search" type="search" placeholder="Например, FINEX или −25%"></label>
+      <label><span>Статус</span><select id="status"></select></label>
+    </div>
+  </section>
+
+  <div class="bar">
+    <div id="resultCount" aria-live="polite"></div>
+    <button id="reset" class="btn">Сбросить фильтры</button>
+  </div>
+
+  <section id="results"></section>
+  <div class="note">Статусы сформированы по формулировкам в исходном файле; сайт не обновляет данные автоматически.</div>
+</main>
+
 <script>
-const offers = [
-{store:'eparket',brand:'DAMY FLOOR',type:'Подарок',offer:'Акция «Клей 2+1»: каждый третий комплект двухкомпонентного клея того же объема в подарок.',end:null,metric:'2+1'},
-{store:'eparket',brand:'Gran Parte',type:'Скидка',offer:'−10% на весь ассортимент премиального инженерного паркета.',end:'31.08.2026',metric:'−10%'},
-{store:'poli24',brand:'Магазин',type:'Подарок',offer:'При покупке напольных покрытий от 50 м² — подарки.',end:'31.12.2026',metric:'50 м²+'},
-{store:'parket-shop',brand:'LEGEND',type:'Скидка',offer:'−15% на паркетную доску LEGEND.',end:'17.08.2026',metric:'−15%'},
-{store:'parket-shop',brand:'DAMY FLOOR',type:'Подарок',offer:'При покупке SPC Family / London / Chevron / Ascent Strong или инженерного паркета: каждая третья банка 2К-клея + подложка LUX IXPE 1,5 мм в подарок.',end:'31.08.2026',metric:'Подарок'},
-{store:'parket-shop',brand:'Greenline',type:'Условия',offer:'На сайте заявлены «акции и скидки» и рассрочка; конкретный процент и срок не указаны.',end:null,metric:'Рассрочка'},
-{store:'polvamvdom',brand:'Gran Parte',type:'Скидка',offer:'Паркетная доска: преимущественно −18–19%. Например, 7 555 → 6 195 ₽/м²; 7 950 → 6 515 ₽/м².',end:null,metric:'−18–19%'},
-{store:'polvamvdom',brand:'Gran Parte',type:'Скидка',offer:'Инженерная елка Амбра/Верона: −18%, 7 555 → 6 195 ₽/м².',end:null,metric:'−18%'},
-{store:'polvamvdom',brand:'My Step',type:'Скидка',offer:'Chester MSV03 и Antiqe MSV05: −11%, 4 790 → 4 290 ₽/м²; Terlis MSV07H: 4 990 → 4 490 ₽/м².',end:null,metric:'−11%'},
-{store:'polvamvdom',brand:'Monte',type:'Скидка',offer:'Инженерная доска: множество позиций −15%. Например, 10 706 → 9 100 ₽/м²; 12 353 → 10 500 ₽/м².',end:null,metric:'−15%'},
-{store:'polstrany',brand:'Quick-Step',type:'Скидка',offer:'−25% на коллекции ламината Impressive и Classic.',end:'05.09.2026',metric:'−25%'},
-{store:'polstrany',brand:'Quick-Step',type:'Подарок',offer:'9+1 м² в подарок: при покупке 9 м² — еще 1 м² в подарок.',end:null,metric:'9+1'},
-{store:'polstrany',brand:'Quick-Step',type:'Скидка',offer:'Скидка новоселам до 25% на широкий ассортимент.',end:null,metric:'до −25%'},
-{store:'polstrany',brand:'Quick-Step',type:'Скидка',offer:'Плинтусы со скидкой до 25%.',end:null,metric:'до −25%'},
-{store:'polstrany',brand:'Quick-Step',type:'Комплект',offer:'Ламинат + плинтус = экономия до 10 000 ₽ в розничных магазинах.',end:null,metric:'−10 000 ₽'},
-{store:'polstrany',brand:'Quick-Step',type:'Сервис',offer:'Бесплатный выезд технолога для подбора напольного покрытия.',end:null,metric:'0 ₽'},
-{store:'finexfloors',brand:'FINEX',type:'Скидка',offer:'−25% на инженерную доску, селекции Натур, Робуст, Рустик.',end:'31.08.2026',metric:'−25%'},
-{store:'finexfloors',brand:'FINEX',type:'Скидка',offer:'−25% на английскую и французскую елку, селекция Робуст.',end:'31.08.2026',metric:'−25%'},
-{store:'glavparket.ru',brand:'Alpine Floor',type:'Скидка',offer:'Инженерная доска Villa: −15%, 5 490 → 4 667 ₽/м².',end:null,metric:'−15%'},
-{store:'glavparket.ru',brand:'Greenline',type:'Скидка',offer:'ТЕХНО ЕЛОЧКА: −10%, 5 200 → 4 680 ₽/м².',end:null,metric:'−10%'},
-{store:'glavparket.ru',brand:'Магазин',type:'Сервис',offer:'Бесплатная доставка; «Доставим и поднимем на этаж».',end:null,metric:'0 ₽'},
-{store:'glavparket.ru',brand:'Магазин',type:'Подарок',offer:'Подложка 3 мм в подарок для товаров с соответствующим стикером.',end:null,metric:'Подарок'},
-{store:'glavparket.ru',brand:'Магазин',type:'Сервис',offer:'Скидка на укладку до 100% для отмеченных товаров; размер зависит от материала, площади и удаленности.',end:null,metric:'до −100%'},
-{store:'glavparket.ru',brand:'Магазин',type:'Условия',offer:'Кэшбек до 25%, «Торгуйся по телефону», гарантия лучшей цены для товаров с соответствующими стикерами.',end:null,metric:'до 25%'},
-{store:'glavparket.ru',brand:'StoneWood (Amigo Group)',type:'Скидка',offer:'Скидка 22% на отдельные позиции.',end:null,metric:'−22%'}
-];
-const stores=['eparket','poli24','parket-shop','polvamvdom','polstrany','coswick','finexfloors','glavparket.ru'];
-const names={'eparket':'eparket','poli24':'poli24','parket-shop':'parket-shop','polvamvdom':'polvamvdom','polstrany':'polstrany','coswick':'coswick','finexfloors':'finexfloors','glavparket.ru':'ГлавПаркет'};
-const counts=Object.fromEntries(stores.map(s=>[s,offers.filter(o=>o.store===s).length]));
-const max=Math.max(...Object.values(counts));
-const bars=document.getElementById('bars');
-stores.forEach(s=>bars.insertAdjacentHTML('beforeend',`<div class="bar-row"><div class="bar-name">${names[s]}</div><div class="bar-track"><div class="bar-fill" style="width:${(counts[s]/max)*100}%"></div></div><div class="bar-num">${counts[s]}</div></div>`));
-const filters=document.getElementById('filters');
-stores.forEach(s=>filters.insertAdjacentHTML('beforeend',`<button class="chip" data-store="${s}">${names[s]} · ${counts[s]}</button>`));
+const DATA={"17.08":[{"site":"eparket","brand":"Gran Parte","condition":"ДЕЙСТВУЕТ — общий баннер: −10% на весь ассортимент премиального инженерного паркета до 31.08.2026. В каталоге по отдельным позициям фактическая скидка достигает −18% (например, 7 555 → 6 195 ₽/м²).","status":"Действует","snapshot":"17.08"},{"site":"poli24","brand":"Без привязки к бренду","condition":"ДЕЙСТВУЕТ 01.06–31.12.2026 — при покупке напольных покрытий от 50 м² — подарки. На региональной странице для паркетной доски указан порог от 120 000 ₽; для московской версии точный порог не подтверждён.","status":"Действует","snapshot":"17.08"},{"site":"parket-shop","brand":"DAMY FLOOR","condition":"ДЕЙСТВУЕТ до 31.08.2026 — каждая третья банка фирменного 2К-клея того же объёма + подложка LUX IXPE 1,5 мм в подарок при покупке участвующего SPC или инженерного паркета.","status":"Действует","snapshot":"17.08"},{"site":"polvamvdom","brand":"Gran Parte","condition":"ДЕЙСТВУЕТ — массовые скидки −18…−19%: 7 555 → 6 195 ₽/м²; 7 950 → 6 515 ₽/м²; 9 650 → 7 915 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"polstrany","brand":"Quick-Step","condition":"ДЕЙСТВУЕТ до 05.09.2026 — −25% на ограниченный ассортимент Classic / Impressive. Примеры: 1 825 → 1 369 ₽/м²; 2 520 → 1 891 ₽/м²; 3 115 → 2 337 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"coswick","brand":"Coswick","condition":"ОФИЦИАЛЬНЫЙ САЙТ ПРОИЗВОДИТЕЛЯ — действующие акции/скидки на продукцию на 17.08.2026 не обнаружены.","status":"Нет подтверждённой акции","snapshot":"17.08"},{"site":"finexfloors","brand":"FINEX — инженерная доска","condition":"ДЕЙСТВУЕТ до 31.08.2026 — выгода 25% + бесплатное хранение до конца 2026 года. Участвуют определённые форматы дуба и ясеня; количество ограничено.","status":"Действует","snapshot":"17.08"},{"site":"glavparket.ru","brand":"StoneWood (Amigo Group)","condition":"ДЕЙСТВУЕТ — баннер −22% на отдельные позиции. В каталоге виниловых полов ряд позиций 1 660 → 1 299 ₽/м² (−22%), отдельные — 2 599 → 1 899 ₽/м² (−27%). Это виниловый пол, не паркет.","status":"Действует","snapshot":"17.08"},{"site":"eparket","brand":"DAMY FLOOR","condition":"ДЕЙСТВУЕТ до 31.08.2026 — при покупке SPC Family / London / Chevron / Ascent Strong или любой коллекции инженерного паркета: каждая третья банка фирменного 2К-клея того же объёма + подложка LUX IXPE 1,5 мм в подарок. Только РФ, количество ограничено.","status":"Действует","snapshot":"17.08"},{"site":"poli24","brand":"DuoWood","condition":"ДЕЙСТВУЕТ — массовые скидки около −30%: 5 082 → 3 557 ₽/м²; 8 107 → 5 675 ₽/м². Отдельные позиции −27…−33%.","status":"Действует","snapshot":"17.08"},{"site":"parket-shop","brand":"LEGEND","condition":"ДЕЙСТВУЕТ ПОСЛЕДНИЙ ДЕНЬ 17.08.2026 — −15% на паркетную/инженерную доску. Пример: Флоренция 110 мм 5 915 → 5 028 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"polvamvdom","brand":"My Step","condition":"ДЕЙСТВУЕТ — отдельные позиции −11%: Chester / Antiqe 4 790 → 4 290 ₽/м²; Terlis 4 990 → 4 490 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"polstrany","brand":"Без привязки к бренду","condition":"ЗАВЕРШЕНА 31.07.2026, БАННЕР ДО СИХ ПОР ВИСИТ — «9+1 м² в подарок» / «10 м² по цене 9» на избранный ламинат; Quick-Step не участвует.","status":"Завершена","snapshot":"17.08"},{"site":"finexfloors","brand":"FINEX — паркет ёлка","condition":"ДЕЙСТВУЕТ до 31.08.2026 — выгода 25% + бесплатное хранение до конца 2026 года. Французская ёлка 110×515 и английская 110×595, селекция Робуст; количество ограничено.","status":"Действует","snapshot":"17.08"},{"site":"glavparket.ru","brand":"Без привязки к бренду","condition":"ДЕЙСТВУЕТ — бесплатная доставка при покупке от 20 м² товаров со стикером; на баннере: «Доставим и поднимем на этаж». Срок не указан.","status":"Действует","snapshot":"17.08"},{"site":"eparket","brand":"Inpa","condition":"ДЕЙСТВУЕТ — отдельные позиции инженерной доски −10%: 10 095 → 9 085 ₽/м². Срок на карточках не указан.","status":"Действует","snapshot":"17.08"},{"site":"poli24","brand":"Upofloor","condition":"ДЕЙСТВУЕТ — точечные скидки примерно −3…−6%: например, 8 890 → 8 357 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"parket-shop","brand":"GreenLine","condition":"ДЕЙСТВУЕТ — в распродаже около −20%: Дуб Мист / Дуб Латте 6 500 → 5 200 ₽/м²; ряд ёлок 7 819 → 6 255 ₽/м² или 8 100 → 6 480 ₽/м². Срок не указан.","status":"Действует","snapshot":"17.08"},{"site":"polvamvdom","brand":"Monte","condition":"ДЕЙСТВУЕТ — массовая скидка −15% на большое число позиций инженерной доски: например, 10 706 → 9 100 ₽/м²; 12 353 → 10 500 ₽/м²; 10 235 → 8 700 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"polstrany","brand":"Без привязки к бренду","condition":"ЗАВЕРШЕНА 31.07.2026, БАННЕР ДО СИХ ПОР ВИСИТ — «Ламинат + плинтус = экономия до 10 000 ₽».","status":"Завершена","snapshot":"17.08"},{"site":"finexfloors","brand":"FINEX — Arte Tech 15,5 мм","condition":"ДЕЙСТВУЕТ до 31.08.2026 — клей FINEX PRO 1000 в подарок при оплате напольного покрытия Arte Tech 15,5 мм.","status":"Действует","snapshot":"17.08"},{"site":"glavparket.ru","brand":"Без привязки к бренду","condition":"ДЕЙСТВУЕТ — подложка 3 мм в подарок для товаров со стикером «Подложка в подарок».","status":"Действует","snapshot":"17.08"},{"site":"eparket","brand":"Greenline — Альт","condition":"ЗАВЕРШЕНА 15.07.2026, БАННЕР ДО СИХ ПОР ВИСИТ — 7 590 → 6 800 ₽/м².","status":"Завершена","snapshot":"17.08"},{"site":"poli24","brand":"Barlinek","condition":"ДЕЙСТВУЕТ — точечные скидки до −20%: например, 8 357 → 6 686 ₽/м².","status":"Действует","snapshot":"17.08"},{"site":"parket-shop","brand":"Karelia","condition":"Подтверждённой текущей процентной скидки на 17.08.2026 не обнаружено.","status":"Нет подтверждённой акции","snapshot":"17.08"},{"site":"polvamvdom","brand":"Karelia","condition":"Подтверждённой текущей акции не обнаружено.","status":"Нет подтверждённой акции","snapshot":"17.08"},{"site":"polstrany","brand":"Quick-Step","condition":"ДЕЙСТВУЕТ — скидка новосёлам до 25% на широкий ассортимент. Срок на странице не указан.","status":"Действует","snapshot":"17.08"},{"site":"finexfloors","brand":"Без привязки к бренду","condition":"РАССРОЧКА СБЕРБАНКА — без первого взноса и переплаты на 6 или 9 месяцев. Финансовое условие, не ценовая скидка.","status":"Финансовое условие","snapshot":"17.08"},{"site":"polstrany","brand":"Karelia / Coswick / Lab Arte","condition":"Отдельных подтверждённых текущих ценовых акций не обнаружено; Lab Arte в московском списке брендов не найден.","status":"Нет подтверждённой акции","snapshot":"17.08"},{"site":"glavparket.ru","brand":"Lab Arte / Karelia","condition":"Подтверждённой текущей процентной скидки на проверенных карточках не обнаружено. У Lab Arte встречаются бесплатная доставка и «Торгуйся по телефону».","status":"Нет подтверждённой акции","snapshot":"17.08"}],"11.08":[{"site":"eparket.com","brand":"Greenline","condition":"Английская ёлка ТЕХНО: 5 200 → 4 680 ₽/м², −10%. До 15.07.2026","status":"Условие","snapshot":"11.08"},{"site":"https://www.poli24.ru/","brand":"Без привязки к бренду","condition":"При покупке напольных покрытий от 50 м² — подарки. 01.06–31.12.2026","status":"Условие","snapshot":"11.08"},{"site":"https://parket-shop.ru/","brand":"LEGEND","condition":"−15% на паркетную доску LEGEND. 17.07–17.08.2026","status":"Условие","snapshot":"11.08"},{"site":"https://polvamvdom.ru/","brand":"Gran Parte","condition":"Паркетная доска: преимущественно −18–19%. Например, 7 555 → 6 195 ₽/м²; 7 950 → 6 515 ₽/м²","status":"Условие","snapshot":"11.08"},{"site":"https://polstrany.ru/","brand":"Quick-Step","condition":"−25% на коллекции ламината Impressive и Classic. 10.07–05.09.2026","status":"Условие","snapshot":"11.08"},{"site":"https://finexfloors.ru/","brand":"FINEX","condition":"−25% на инженерную доску, селекции Натур, Робуст, Рустик. До 31.08.2026","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Alpine Floor","condition":"Инженерная доска Villa: −15%, 5 490 → 4 667 ₽/м²","status":"Условие","snapshot":"11.08"},{"site":"eparket.com","brand":"Greenline","condition":"Коллекция Альт: 7 590 → 6 800 ₽/м², выгода 790 ₽/м². До 15.07.2026","status":"Условие","snapshot":"11.08"},{"site":"https://parket-shop.ru/","brand":"DAMY FLOOR","condition":"При покупке SPC Family / London / Chevron / Ascent Strong или инженерного паркета: каждая третья банка 2К-клея + подложка LUX IXPE 1,5 мм в подарок. 01–31.08.2026","status":"Условие","snapshot":"11.08"},{"site":"https://polvamvdom.ru/","brand":"Gran Parte","condition":"Инженерная ёлка Амбра/Верона: −18%, 7 555 → 6 195 ₽/м²","status":"Условие","snapshot":"11.08"},{"site":"https://polstrany.ru/","brand":"Quick-Step","condition":"9+1 м² в подарок: при покупке 9 м² — ещё 1 м² в подарок. Срок не указан","status":"Условие","snapshot":"11.08"},{"site":"https://finexfloors.ru/","brand":"FINEX","condition":"−25% на английскую и французскую ёлку, селекция Робуст. До 31.08.2026","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Greenline","condition":"ТЕХНО ЁЛОЧКА: −10%, 5 200 → 4 680 ₽/м²","status":"Условие","snapshot":"11.08"},{"site":"eparket.com","brand":"Greenline","condition":"Коллекция Делюкс: 8 700 → от 7 065 ₽/м², около −19%. До 15.07.2026","status":"Условие","snapshot":"11.08"},{"site":"https://parket-shop.ru/","brand":"Greenline","condition":"На сайте заявлены «акции и скидки» + рассрочка, но конкретный процент и срок не указаны","status":"Финансовое условие","snapshot":"11.08"},{"site":"https://polvamvdom.ru/","brand":"My Step","condition":"Chester MSV03 и Antiqe MSV05: −11%, 4 790 → 4 290 ₽/м²; Terlis MSV07H: 4 990 → 4 490 ₽/м²","status":"Условие","snapshot":"11.08"},{"site":"https://polstrany.ru/","brand":"Quick-Step","condition":"Скидка новосёлам до 25% на широкий ассортимент","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Greenline EXTRA","condition":"В индексированных карточках встречается ≈−13–14%, например 5 750 → 4 990 ₽/м². Требует проверки актуальности","status":"Условие","snapshot":"11.08"},{"site":"eparket.com","brand":"DAMY FLOOR","condition":"Подложка LUX IXPE 1,5 мм в подарок при покупке SPC Family / London / Chevron / Ascent Strong. 26.06–31.07.2026","status":"Условие","snapshot":"11.08"},{"site":"https://polvamvdom.ru/","brand":"Monte","condition":"Инженерная доска: множество позиций −15%. Например 10 706 → 9 100 ₽/м²; 12 353 → 10 500 ₽/м²","status":"Условие","snapshot":"11.08"},{"site":"https://polstrany.ru/","brand":"Quick-Step","condition":"Плинтусы со скидкой до 25%","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Без привязки к бренду","condition":"Бесплатная доставка; на баннере указано «Доставим и поднимем на этаж». Срок не указан","status":"Условие","snapshot":"11.08"},{"site":"eparket.com","brand":"DAMY FLOOR","condition":"Акция «Клей 2+1»: каждый третий комплект двухкомпонентного клея того же объёма в подарок. Срок на баннере не указан","status":"Условие","snapshot":"11.08"},{"site":"https://polstrany.ru/","brand":"Quick-Step","condition":"Ламинат + плинтус = экономия до 10 000 ₽ в розничных магазинах","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Без привязки к бренду","condition":"Подложка 3 мм в подарок для товаров с соответствующим стикером","status":"Условие","snapshot":"11.08"},{"site":"eparket.com","brand":"Gran Parte","condition":"−10% на весь ассортимент премиального инженерного паркета. 10.06–31.08.2026","status":"Условие","snapshot":"11.08"},{"site":"https://polstrany.ru/","brand":"Quick-Step","condition":"Бесплатный выезд технолога для подбора напольного покрытия","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Без привязки к бренду","condition":"Скидка на укладку до 100% для отмеченных товаров; размер зависит от материала, площади и удалённости","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"Без привязки к бренду","condition":"Кэшбек до 25%, «Торгуйся по телефону», гарантия лучшей цены для товаров с соответствующими стикерами","status":"Условие","snapshot":"11.08"},{"site":"glavparket.ru","brand":"StoneWood (Amigo Group)","condition":"Скидка 22% на отдельные позиции. Срок акции на предоставленном баннере не указан","status":"Условие","snapshot":"11.08"}]};
+const state={snapshot:"17.08",site:"Все",status:"Все",q:""};
+const $=s=>document.querySelector(s);
+const esc=v=>String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+const items=()=>DATA[state.snapshot]||[];
 
-const brands=[...new Set(offers.map(o=>o.brand))].filter(b=>b!=='Магазин').sort((a,b)=>a.localeCompare(b,'ru'));
-let m='<thead><tr><th>Бренд</th>'+stores.map(s=>`<th>${names[s]}</th>`).join('')+'<th>Всего</th></tr></thead><tbody>';
-brands.forEach(b=>{let total=0;m+=`<tr><td>${b}</td>`;stores.forEach(s=>{let c=offers.filter(o=>o.brand===b&&o.store===s).length;total+=c;m+=`<td>${c?`<span class="dot">${c}</span>`:'<span class="zero">—</span>'}</td>`});m+=`<td><strong>${total}</strong></td></tr>`});m+='</tbody>';document.getElementById('matrix').innerHTML=m;
-
-let activeStore='all';const cards=document.getElementById('cards');const search=document.getElementById('search');
-function render(){cards.querySelectorAll('.card').forEach(x=>x.remove());const q=search.value.trim().toLowerCase();const list=offers.filter(o=>(activeStore==='all'||o.store===activeStore)&&(!q||`${o.store} ${o.brand} ${o.offer} ${o.type}`.toLowerCase().includes(q)));
- document.getElementById('resultCount').textContent=`${list.length} ${list.length===1?'предложение':(list.length>1&&list.length<5?'предложения':'предложений')}`;
- document.getElementById('empty').style.display=list.length?'none':'block';
- list.forEach(o=>cards.insertAdjacentHTML('beforeend',`<article class="card"><div class="card-top"><div><div class="store">${names[o.store]}</div><div class="brand">${o.brand}</div></div><span class="tag ${o.end?'':'ongoing'}">${o.end?'до '+o.end:'без срока'}</span></div><div class="discount">${o.metric}</div><div class="offer">${o.offer}</div><div class="meta"><span class="type">${o.type}</span><span>${o.end?'Срок указан':'Срок не указан'}</span></div></article>`));}
-filters.addEventListener('click',e=>{const b=e.target.closest('[data-store]');if(!b)return;activeStore=b.dataset.store;filters.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});search.addEventListener('input',render);render();
+function renderMetrics(){
+  const all=items();
+  const active=all.filter(x=>x.status==="Действует").length;
+  const ended=all.filter(x=>x.status==="Завершена").length;
+  const noPromo=all.filter(x=>x.status==="Нет подтверждённой акции"||x.status==="Не считать акцией").length;
+  const data=[["Записей",all.length],["Действует",active],["Завершено",ended],["Без подтверждённой акции",noPromo]];
+  $("#metrics").innerHTML=data.map(([l,v])=>`<div class="metric"><div class="label">${esc(l)}</div><div class="value">${v}</div></div>`).join("");
+}
+function renderSnapshots(){
+  document.querySelectorAll("[data-snapshot]").forEach(b=>b.classList.toggle("active",b.dataset.snapshot===state.snapshot));
+}
+function renderTabs(){
+  const sites=["Все",...new Set(items().map(x=>x.site))];
+  if(!sites.includes(state.site)) state.site="Все";
+  $("#tabs").innerHTML=sites.map(site=>{
+    const n=site==="Все"?items().length:items().filter(x=>x.site===site).length;
+    return `<button class="site-btn ${state.site===site?"active":""}" data-site="${esc(site)}">${esc(site)} · ${n}</button>`;
+  }).join("");
+  document.querySelectorAll("[data-site]").forEach(b=>b.addEventListener("click",()=>{state.site=b.dataset.site;render();}));
+}
+function renderStatuses(){
+  const vals=["Все",...new Set(items().map(x=>x.status))];
+  if(!vals.includes(state.status)) state.status="Все";
+  $("#status").innerHTML=vals.map(v=>`<option ${state.status===v?"selected":""}>${esc(v)}</option>`).join("");
+}
+function filtered(){
+  const q=state.q.trim().toLowerCase();
+  return items().filter(x=>
+    (state.site==="Все"||x.site===state.site)&&
+    (state.status==="Все"||x.status===state.status)&&
+    (!q||`${x.site} ${x.brand} ${x.condition} ${x.status}`.toLowerCase().includes(q))
+  );
+}
+function word(n){return n%10===1&&n%100!==11?"запись":([2,3,4].includes(n%10)&&![12,13,14].includes(n%100)?"записи":"записей");}
+function renderResults(){
+  const rows=filtered();
+  $("#resultCount").textContent=`Показано ${rows.length} из ${items().length} записей · срез ${state.snapshot}.2026`;
+  if(!rows.length){$("#results").innerHTML='<div class="empty">По выбранным фильтрам ничего не найдено.</div>';return;}
+  const groups=new Map();
+  rows.forEach(x=>{if(!groups.has(x.site))groups.set(x.site,[]);groups.get(x.site).push(x);});
+  $("#results").innerHTML=[...groups.entries()].map(([site,list])=>`
+    <section class="group">
+      <div class="group-head"><h2>${esc(site)}</h2><div class="count">${list.length} ${word(list.length)}</div></div>
+      <div class="grid">
+        ${list.map(x=>`
+          <article class="card">
+            <div class="card-head">
+              <div class="brand">${esc(x.brand)}</div>
+              <span class="status" data-status="${esc(x.status)}">${esc(x.status)}</span>
+            </div>
+            <p class="condition">${esc(x.condition)}</p>
+          </article>`).join("")}
+      </div>
+    </section>`).join("");
+}
+function render(){renderSnapshots();renderMetrics();renderTabs();renderStatuses();renderResults();}
+document.querySelectorAll("[data-snapshot]").forEach(b=>b.addEventListener("click",()=>{
+  state.snapshot=b.dataset.snapshot;state.site="Все";state.status="Все";state.q="";$("#search").value="";render();
+}));
+$("#search").addEventListener("input",e=>{state.q=e.target.value;renderResults();});
+$("#status").addEventListener("change",e=>{state.status=e.target.value;renderResults();});
+$("#reset").addEventListener("click",()=>{state.site="Все";state.status="Все";state.q="";$("#search").value="";render();});
+render();
 </script>
 </body>
 </html>
