@@ -1,0 +1,49 @@
+name: Temporary Whisper model export
+
+on:
+  push:
+    branches:
+      - chatgpt-transcription-temp-20260819
+
+permissions:
+  contents: read
+
+jobs:
+  export-models:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download multilingual Whisper models
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p models
+          curl -L --fail --retry 5 --retry-delay 10 --retry-all-errors \
+            -o models/ggml-base-q5_1.bin \
+            https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base-q5_1.bin
+          curl -L --fail --retry 5 --retry-delay 10 --retry-all-errors \
+            -o models/ggml-small-q5_1.bin \
+            https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-q5_1.bin
+          test "$(stat -c%s models/ggml-base-q5_1.bin)" -gt 50000000
+          test "$(stat -c%s models/ggml-small-q5_1.bin)" -gt 150000000
+          sha256sum models/*.bin > models/SHA256SUMS.txt
+          cat models/SHA256SUMS.txt
+
+      - name: Upload base model
+        uses: actions/upload-artifact@v4
+        with:
+          name: whisper-base-q5_1
+          path: |
+            models/ggml-base-q5_1.bin
+            models/SHA256SUMS.txt
+          retention-days: 1
+          compression-level: 0
+
+      - name: Upload small model
+        uses: actions/upload-artifact@v4
+        with:
+          name: whisper-small-q5_1
+          path: |
+            models/ggml-small-q5_1.bin
+            models/SHA256SUMS.txt
+          retention-days: 1
+          compression-level: 0
