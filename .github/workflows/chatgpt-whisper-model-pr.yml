@@ -25,15 +25,35 @@ jobs:
             https://huggingface.co/ggml-org/whisper-vad/resolve/main/ggml-silero-v6.2.0.bin
           test "$(stat -c%s models/ggml-large-v3-turbo-q5_0.bin)" -gt 500000000
           test "$(stat -c%s models/ggml-silero-v6.2.0.bin)" -gt 500000
-          sha256sum models/*.bin > models/SHA256SUMS.txt
+          sha256sum models/ggml-large-v3-turbo-q5_0.bin models/ggml-silero-v6.2.0.bin > models/SHA256SUMS.txt
+          split -b 300000000 -d -a 2 models/ggml-large-v3-turbo-q5_0.bin models/turbo.part.
+          test -f models/turbo.part.00
+          test -f models/turbo.part.01
+          test ! -f models/turbo.part.02
+          ls -l models/turbo.part.*
           cat models/SHA256SUMS.txt
 
-      - name: Upload turbo model and VAD
+      - name: Upload turbo part 00
         uses: actions/upload-artifact@v4
         with:
-          name: whisper-large-v3-turbo-q5_0-vad
+          name: whisper-turbo-part-00
+          path: models/turbo.part.00
+          retention-days: 1
+          compression-level: 0
+
+      - name: Upload turbo part 01
+        uses: actions/upload-artifact@v4
+        with:
+          name: whisper-turbo-part-01
+          path: models/turbo.part.01
+          retention-days: 1
+          compression-level: 0
+
+      - name: Upload VAD and checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: whisper-vad-and-checksums
           path: |
-            models/ggml-large-v3-turbo-q5_0.bin
             models/ggml-silero-v6.2.0.bin
             models/SHA256SUMS.txt
           retention-days: 1
